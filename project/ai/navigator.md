@@ -7,11 +7,12 @@
 ## 基本ルール
 
 1. 作業状態が影響しそうなら、最初に [state.md](state.md) を読む
-2. 機能が明確なら、該当する `features/` を読む
-3. 作業種別が明確なら、該当する `skills/` を読む
-4. 複数レイヤーにまたがるなら [architecture.md](architecture.md) を読む
-5. UI判断が含まれるなら [design.md](design.md) を読む
-6. コードを書く前に必要な範囲で [coding_rules.md](coding_rules.md) を読む
+2. Wiki更新、調査結果の保存、整合性チェックなら [operations.md](operations.md) を読む
+3. 機能が明確なら、該当する `features/` を読む
+4. 作業種別が明確なら、該当する `skills/` を読む
+5. 複数レイヤーにまたがるなら [architecture.md](architecture.md) を読む
+6. UI判断が含まれるなら [design.md](design.md) を読む
+7. コードを書く前に必要な範囲で [coding_rules.md](coding_rules.md) を読む
 
 ## 依頼別ルート
 
@@ -113,6 +114,35 @@
 5. 関連する `skills/*.md`
 6. [coding_rules.md](coding_rules.md)
 
+### AI向けWikiの更新
+
+例: 新しい仕様決定を反映する、調査結果を次回以降も使える形に残す
+
+読む順:
+
+1. [operations.md](operations.md)
+2. [state.md](state.md)
+3. 更新対象の `features/*.md` または `skills/*.md`
+4. [log.md](log.md)
+
+注意:
+
+- 一時的な会話ログをそのまま貼らない
+- 恒久仕様は `features/`、作業状態は `state.md`、運用履歴は `log.md` に分ける
+- 価値が一度きりの回答は保存しない
+
+### AI向けWikiのLint
+
+例: リンク切れ、重複、古い状態、読み分けの不整合を確認する
+
+読む順:
+
+1. [operations.md](operations.md)
+2. [index.md](index.md)
+3. [navigator.md](navigator.md)
+4. [state.md](state.md)
+5. 必要に応じて対象ファイル
+
 ## 依頼文からのキーワード対応
 
 | 依頼文のキーワード | 優先して読む資料 |
@@ -126,6 +156,7 @@
 | 通知、reminder、deadline | `features/notification.md` |
 | test、spec、E2E、CI | `skills/testing.md` |
 | 今の状態、未完了、作業中 | `state.md` |
+| Wiki、ドキュメント更新、知見を残す、ingest、query、lint | `operations.md`, `log.md` |
 
 ## 終了条件
 
@@ -137,4 +168,3 @@
 - テスト方針が把握できている
 
 不安だから全資料を読む、という判断は避けてください。必要になった時点で追加で読んでください。
-
